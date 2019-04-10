@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import NavBar from "../../layout/NavBar/NavBar";
-import Footer from "../../layout/Footer/Footer";
+import NavBar from "../layout/NavBar/NavBar";
+import Footer from "../layout/Footer/Footer";
 
 import GeneralTraining from "./GeneralTraining";
 

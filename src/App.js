@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Security, SecureRoute, ImplicitCallback } from "@okta/okta-react";
 
 import Home from "./components/pages/Home/Home";
-import GroupTrainingRequests from "./components/pages/GeneralTrainingRequests/GeneralTrainingRequests";
+import GroupTrainingRequests from "./components/Training/GeneralTrainingRequests";
 import Login from "./components/auth/Login";
-
 
 import "./App.css";
 
@@ -32,6 +31,7 @@ class App extends Component {
                 exact={true}
                 component={GroupTrainingRequests}
               />
+
               <Route
                 path="/login"
                 render={() => <Login baseUrl="https://dev-913015.okta.com" />}
