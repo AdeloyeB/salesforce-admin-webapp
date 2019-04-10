@@ -1,0 +1,33 @@
+.bg-light {
+    background: #007faa !important;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+}
+
+
+a:hover {
+    color: white;
+}
+
+.navBackground {
+    background-color: #007faa;
+}
+
+.dropdownFontColor {
+    color: white
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: #007faa;
+}
