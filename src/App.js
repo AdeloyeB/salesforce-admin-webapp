@@ -4,6 +4,7 @@ import { Security, SecureRoute, ImplicitCallback } from "@okta/okta-react";
 
 import Home from "./components/pages/Home/Home";
 import GroupTrainingRequests from "./components/Training/GeneralTrainingRequests";
+import UserRequestPage from "./components/pages/UserRequests/UserRequestPage";
 import Login from "./components/auth/Login";
 
 import "./App.css";
@@ -30,6 +31,11 @@ class App extends Component {
                 path="/generaltrainingrequests"
                 exact={true}
                 component={GroupTrainingRequests}
+              />
+              <SecureRoute
+                path="/userrequestpage"
+                exact={true}
+                component={UserRequestPage}
               />
 
               <Route

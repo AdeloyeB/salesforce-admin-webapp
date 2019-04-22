@@ -71,11 +71,7 @@ export default withAuth(
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/generaltrainingrequests">
-                    Training Requests
-                  </Link>
-                </li>
+
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
@@ -90,6 +86,16 @@ export default withAuth(
                     className="dropdown-menu navBackground"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
+                    <li className="dropdown-item dropdownFontColor">
+                      <Link className="nav-link" to="/userrequestpage">
+                        User Requests
+                      </Link>
+                    </li>
+                    <li className="dropdown-item dropdownFontColor">
+                      <Link className="nav-link" to="/generaltrainingrequests">
+                        Training Requests
+                      </Link>
+                    </li>
                     <button
                       className="dropdown-item dropdownFontColor"
                       onClick={this.logout}
