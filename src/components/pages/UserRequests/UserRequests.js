@@ -39,20 +39,48 @@ export class UserRequests extends Component {
     });
   }
 
+  removeItem(itemId) {
+    const itemRef = firebase.database().ref(`/items/${itemId}`);
+    itemRef.remove();
+  }
+
   render() {
     return (
-      <section className="display-item">
+      <section className="display-item container">
         <div className="wrapper">
-          <ul>
-            {this.state.items.map(item => {
-              return (
-                <li key={item.id}>
-                  <h3>{item.firstName}</h3>
-                  <p>brought by: {item.emailAddress}</p>
-                </li>
-              );
-            })}
-          </ul>
+          {this.state.items.map(item => {
+            return (
+              <div key={item.id} class="card">
+                <h5 className="card-header">
+                  Training Owner: {item.firstName} {item.lastName} | Email
+                  Address:{item.emailAddress}
+                </h5>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    Manager Email: {item.managerEmail}
+                  </h5>
+                  <h5 className="card-title">Job Title: {item.jobTitle}</h5>
+                  <h5 className="card-title">Role: {item.role}</h5>
+                  <h5 className="card-title">Profile: {item.profile}</h5>
+                  <p className="card-text">
+                    Replicate User: {item.replicateUser}
+                  </p>
+                  <p className="card-text">Team: {item.divisionTeam}</p>
+                  <p className="card-text">VIP User: {item.VIP}</p>
+                  <p className="card-text">Pardot User: {item.pardot}</p>
+                  <p className="card-text">
+                    Personal Assistant Sync: {item.paCalendarSync}
+                  </p>
+                  <button
+                    className="btn btn-success"
+                    onClick={() => this.removeItem(item.id)}
+                  >
+                    Completed
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     );
