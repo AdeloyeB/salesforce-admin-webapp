@@ -18,8 +18,12 @@ export class GeneralTraining extends Component {
       for (let item in items) {
         newState.push({
           id: item,
+          trainingAttendees: items[item].trainingAttendees,
+          trainingContent: items[item].trainingContent,
           trainingOwner: items[item].trainingOwner,
-          trainingManager: items[item].trainingManager
+          trainingManager: items[item].trainingManager,
+          trainingOwnerEmailAddress: items[item].trainingOwnerEmailAddress,
+          trainingTeam: items[item].trainingTeam
         });
       }
       this.setState({
@@ -28,20 +32,41 @@ export class GeneralTraining extends Component {
     });
   }
 
+  removeItem(itemId) {
+    const itemRef = firebase.database().ref(`/items/${itemId}`);
+    itemRef.remove();
+  }
+
   render() {
     return (
-      <section className="display-item">
+      <section className="display-item container">
         <div className="wrapper">
-          <ul>
-            {this.state.items.map(item => {
-              return (
-                <li key={item.id}>
-                  <h3>{item.trainingOwner}</h3>
-                  <p>brought by: {item.trainingManager}</p>
-                </li>
-              );
-            })}
-          </ul>
+          {this.state.items.map(item => {
+            return (
+              <div key={item.id} class="card">
+                <h5 className="card-header">
+                  Training Owner: {item.trainingOwner} | Email Address:{" "}
+                  {item.trainingOwnerEmailAddress}
+                </h5>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    Manager: {item.trainingManager}
+                  </h5>
+                  <h5 className="card-title">
+                    Attendees: {item.trainingAttendees}
+                  </h5>
+                  <p className="card-text">Team: {item.trainingTeam}</p>
+                  <p className="card-text">{item.trainingContent}</p>
+                  <button
+                    className="btn btn-success"
+                    onClick={() => this.removeItem(item.id)}
+                  >
+                    Completed
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     );

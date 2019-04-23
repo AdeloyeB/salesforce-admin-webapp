@@ -58,7 +58,7 @@ export class Footer extends Component {
                 York House, 45 Seymour Street, London , W1H 7LX
               </p>
               <p className="whiteText">
-                <i className="fas fa-envelope mr-3" /> nfo@britishland.com
+                <i className="fas fa-envelope mr-3" /> info@britishland.com
               </p>
               <p className="whiteText">
                 <i className="fas fa-phone mr-3" /> Tel: 020 7486 4466

@@ -8,9 +8,13 @@ import UserRequests from "./UserRequests";
 export class UserRequestPage extends Component {
   render() {
     return (
-      <div>
-        <UserRequests />
-      </div>
+      <section>
+        <NavBar />
+        <div>
+          <UserRequests />
+        </div>
+        <Footer />
+      </section>
     );
   }
 }
